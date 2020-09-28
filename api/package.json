@@ -1,14 +1,14 @@
 {
   "name": "ecommerce-api",
   "version": "0.0.1",
-  "description": "API para Curso Ecommerce do Zero",
+  "description": "API Ecommerce",
   "main": "server.js",
   "scripts": {
     "test": "mocha --timeout 2000 --exit",
     "dev": "NODE_ENV=development nodemon server.js",
     "build": "NODE_ENV=production pm2 start server.js --name=\"ecommerce-api\""
   },
-  "author": "Mateus Machado",
+  "author": "Wellington Lima",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
