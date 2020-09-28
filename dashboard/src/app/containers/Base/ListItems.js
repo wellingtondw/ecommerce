@@ -35,11 +35,17 @@ const items = [
 ];
 
 function ListItems({ open, history }) {
+  const location = history.location.pathname;
+
   return (
     <div className="items-wrapper">
       {items.map((item) => (
         <Link to={item.route}>
-          <div className="menu-item flex horizontal">
+          <div
+            className={`menu-item ${
+              location === item.route ? "menu-item-active" : ""
+            } flex horizontal`}
+          >
             <div className="flex-1 flex flex-center">{item.icon}</div>
             {open && (
               <div className="flex-2 flex flex-start">

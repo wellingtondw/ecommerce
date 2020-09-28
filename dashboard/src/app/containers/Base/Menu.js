@@ -6,9 +6,12 @@ function Menu(props) {
   const [open, setOpen] = useState(true);
 
   return (
-    <div>
-      <div className="top-item">
-        <i className="fas fa-arrow-left" />
+    <div className={`menu ${open ? "menu-open" : ""}`}>
+      <div
+        className={`top-item flex ${open ? "flex-end" : "flex-center"}`}
+        onClick={() => setOpen(!open)}
+      >
+        <i className={`fas fa-arrow-${open ? "left" : "right"}`} />
       </div>
       <hr />
       <ListItems open={open} history={props.history} />
