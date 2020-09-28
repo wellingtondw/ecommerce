@@ -4,6 +4,7 @@ import store from "./store";
 
 import { HashRouter as Router, Route } from "react-router-dom";
 
+import base from "./containers/HOC/Base";
 import Requests from "./containers/Requests";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-          <Route path="/" exact component={Requests} />
+          <Route path="/" exact component={base(Requests)} />
         </div>
       </Router>
     </Provider>
