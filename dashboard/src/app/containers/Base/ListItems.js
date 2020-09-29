@@ -39,8 +39,8 @@ function ListItems({ open, history }) {
 
   return (
     <div className="items-wrapper">
-      {items.map((item) => (
-        <Link to={item.route}>
+      {items.map((item, idx) => (
+        <Link to={item.route} key={idx}>
           <div
             className={`menu-item ${
               location === item.route ? "menu-item-active" : ""

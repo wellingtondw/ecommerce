@@ -13,20 +13,22 @@ function DefaultTable({ header, data }) {
           </tr>
         </thead>
         <tbody>
-          {data.map((row, idx) => (
-            <tr key={idx}>
-              {Object.keys(header).map((item, index) => (
-                <td key={index}>{row[item] || ""}</td>
-              ))}
-              {row["detailsLink"] && (
-                <td>
-                  <Link to={"detailsLink"}>
-                    <button>Detalhes</button>
-                  </Link>
-                </td>
-              )}
-            </tr>
-          ))}
+          {data.map((row, idx) => {
+            return (
+              <tr key={idx}>
+                {header.map((item, index) => (
+                  <td key={index}>{row[item] || ""}</td>
+                ))}
+                {row["detailsLink"] && (
+                  <td>
+                    <Link to={row["detailsLink"]}>
+                      <button>Detalhes</button>
+                    </Link>
+                  </td>
+                )}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

@@ -5,9 +5,11 @@ import Title from "../../components/text/Title";
 
 import Search from "../../components/inputs/Search";
 import Table from "../../components/table/DefaultTable";
+import Pagination from "../../components/pagination/DefaultPagination";
 
 function Requests(props) {
   const [search, setSearch] = useState("");
+  const [currentPageNumber, setCurrentPageNumber] = useState(0);
   const [data, setData] = useState([
     {
       Cliente: "Cliente 1",
@@ -32,6 +34,10 @@ function Requests(props) {
     },
   ]);
 
+  const onChangeCurrentPageNumber = (current) => {
+    setCurrentPageNumber(current);
+  };
+
   return (
     <div className="Requests">
       <div className="card">
@@ -41,12 +47,18 @@ function Requests(props) {
           value={search}
           placeholder="Pesquise aqui pelo nome do cliente..."
           onChange={(evt) => setSearch(evt.target.value)}
+          onClick={() => alert("Pesquisar")}
         />
         <Table
           header={["Cliente", "Valor Total", "Data", "Situação"]}
           data={data}
         />
-        <Pagination />
+        <Pagination
+          currentValue={currentPageNumber}
+          totalItems={120}
+          limit={20}
+          onClick={(current) => onChangeCurrentPageNumber(current)}
+        />
       </div>
     </div>
   );
