@@ -7,6 +7,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 
 import base from "./containers/HOC/Base";
 import Requests from "./containers/Requests";
+import Request from "./containers/Request";
 
 import Login from "./containers/login";
 import PasswordRecovery from "./containers/password-recovery";
@@ -18,6 +19,7 @@ function App() {
       <Router>
         <div className="App">
           <Route path="/" exact component={base(Requests)} />
+          <Route path="/pedido" exact component={base(Request)} />
 
           <Route path="/login" exact component={Login} />
           <Route path="/recuperar-senha" exact component={PasswordRecovery} />

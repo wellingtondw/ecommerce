@@ -39,7 +39,7 @@ function Requests(props) {
   };
 
   return (
-    <div className="Requests">
+    <div className="requests full-width">
       <div className="card">
         <Title type="h1" title="Pedidos" />
         <br />
