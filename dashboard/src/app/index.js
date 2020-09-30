@@ -21,11 +21,7 @@ function App() {
 
           <Route path="/login" exact component={Login} />
           <Route path="/recuperar-senha" exact component={PasswordRecovery} />
-          <Route
-            path="/recuperar-senha/:token"
-            exact
-            component={PasswordReset}
-          />
+          <Route path="/resetar-senha/:token" exact component={PasswordReset} />
         </div>
       </Router>
     </Provider>
